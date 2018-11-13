@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="fruits">
+        <li>Apple</li>
+        <li>Banana</li>
+        <li data-foodtype="squishy">Orange</li>
+        <li>Pear</li>
+        <li>Kiwi</li>
+        <li id="berry">Strawberry</li>
+        </ul>
+</body>
+<script>
+
+    const listIt = document.getElementsByTagName('li');
+    
+    const berry = document.getElementById('berry');
+    console.log(berry);
+    console.log('I found the berry: ' + berry.innerHTML);
+    berry.style.backgroundColor = 'red';
+
+    
+    const fruit = document.querySelector('[data-foodtype]');
+    fruit.style.backgroundColor = 'orange';
+
+    console.log(listIt);
+    console.log('Using the for loop here:');
+    for (let i = 0; i < 6; i++){
+        const e = listIt[i].innerHTML;
+        console.log(e);
+        listIt[i].style.width = '100px';
+        listIt[i].style.listStyleType = 'none';
+        if(listIt[i].innerHTML == 'Pear'){
+            listIt[i].style.backgroundColor = 'lightgreen';
+        }
+
+    };
+
+    const letsList = document.querySelectorAll('li');
+    console.log(letsList);
+    console.log('Using forEach here:');
+    letsList.forEach(li => {
+        console.log(li.innerHTML);
+        li.style.border = '1.5px solid black';
+    });
+    
+
+</script>
+</html>
