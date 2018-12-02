@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>HTML PAGE</h1>
+
+<form action="/search" id="searchform">
+    <h3>Search for a picture</h3>
+    <input type="text" name="category" placeholder="Search by category">
+    <button type="submit">Search</button>
+</form>
+
+<form action="/upload" method="post" enctype="multipart/form-data" id="mediaform">
+    <br>
+    <h3>Upload a picture</h3>
+    <input type="text" name="category" placeholder="Category">
+    <br>
+    <input type="text" name="title" placeholder="Title">
+    <br>
+    <input type="text" name="details" placeholder="Details">
+    <br>
+    <label>Kuva, ääni tai video
+        <input type="file" name="mediafile" accept="audio/*,video/*,image/*">
+    </label>
+    <br>
+    <button type="submit">Submit</button>
+</form>
+
+<h3>Update Image</h3>
+<form action="/update" id="updateform">
+    <input type="text" name="category" placeholder="Category">
+    <br>
+    <input type="text" name="title" placeholder="Title">
+    <br>
+    <input type="text" name="details" placeholder="Details">
+    <br>
+    <input type="hidden" name="idM">
+    <button type="submit" disabled>Submit</button>
+</form>
+<br>
+
+<h3>Delete image</h3>  
+<form action="/delete"  id="deleteform">
+    <input name="idM" type="hidden">
+    <button type="submit" disabled>Delete</button>
+</form>
+
+<br>
+<br>
+<div>
+    <ul id="imagelist">
+
+    </ul>
+</div>
+<script src="js/main.js"></script>
+</body>
+</html>
